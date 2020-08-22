@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="conteiner flex flex-wrap" >
+	{% if user  %}
+		<div class="user post desk" >
+			<h3>Bem Vindo, {{user}}!</h3>
+			<p>
+				<a href="/addVaga" >Adicionar Vagas</a> |
+				<a href="/addVaga" >Adicionar Serviços</a><br>
+				<hr>
+				<a href="#" >Ver Últimos usuários cadastrados</a><br>
+				<a href="" >Analisar Usuários</a><br>
+				<hr>
+				<a href="#" >Aprovar Serviço/Vaga</a><br>
+				<a href="#" >Últimos posts aprovados</a><br>
+				<a href="#" >Vagas recusadas</a><br>
+				<hr>
+				<a href="#" >Analisar currículos</a><br>
+				<a href="#" >Currículos aprovados</a><br>
+				<a href="#" >Currículos Reprovados</a><br>
+				<hr>
+			</p>
+		</div>
+	{% endif %}
+</div>
+{% endblock content %}

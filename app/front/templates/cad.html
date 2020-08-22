@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<form id="cadastro"class="form-login">
+		<fieldset>
+			<legend><h1 class="center" >Cadastro</h1></legend>
+				{% if erro %}
+					<div class="alert alert-danger esc" role="alert">
+						Dados Inválidos!
+						{{ erro }}
+					</div>
+				{% endif %}
+			<div id="app">
+				<input class="inp-login"  type="text"  placeholder="Nome Completo:" requiHred minlength="8"  v-model="user.nome" >
+				<input class="inp-login"  type="text"  placeholder="Usuário:"       requiread minlength="8"  v-model="user.username" >
+				<input class="inp-login"  type="email" placeholder="E-mail"         reqauired minlength="10" v-model="user.email">
+				<input class="inp-login"  type="text"  placeholder="Telefone"       requisred minlength="18" v-model="user.tel" id="tel">
+				<input class="inp-login psw"  type="password" placeholder="Senha"   requsired minlength="8"  v-model="user.senha" id="senha_1" onkeyup="senha">
+				<input class="inp-login psw"  type="password" placeholder="Repita a Senha" required minlength="8" v-model="user.senha2" id="senha_2" onkeyup="senha">
+				<sup id="senha_erro" class="none center"  >As senhas Não Coincidem </sup>
+				<input type="checkbox" class="btn_psw" ><span class="sp_psw"> Mostrar Senha</span>
+				<br><br>
+				<button class="enviar" @click="cadastrar()" >Cadastrar</button>
+				<p class="center" ><sub >Já é cadastrado?</sub><br>
+				<a href="/login" >Login</a></p>
+			</div>
+		</fieldset>
+	</form>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function(){
+			$("#cadastro").submit(function(e){e.preventDefault()})
+			var app = new Vue({
+				el: "#app",
+				data: {
+					user: {
+						nome: "",
+						username: "",
+						email: "",
+						tel: "",
+						senha: "",
+						senha2: "",
+					}
+				},
+				methods: {
+					cadastrar: function(){
+						axios.post('/cadastro/',{
+							user: this.user
+						})
+						.then(response => alerta(response))
+						.catch(error => alert(error))
+					}
+				}
+			})
+			function alerta(data){
+				if(data.status == 201){
+					alert('ok')
+					//$("#alertDanger").hide()
+					//$("#alertSuccess").show()
+					window.location.href = '/'
+				}else{
+					alert('fail')
+					//$("#alertSuccess").hide()
+					//$("#alertDanger").show()
+					
+				}
+			}
+		})
+	</script>
+
+{% endblock content %}

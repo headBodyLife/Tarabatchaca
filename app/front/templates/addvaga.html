@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<div class="conteiner flex flex-wrap" >
+	<h4>
+		<input type="radio" id="vagasbtn" name="anuncio" checked><label for="vagasbtn" > Vaga de emprego</label><br>
+		<input type="radio" id="prestbtn" name="anuncio"><label for="prestbtn" onclick="mostrar"> Prestação de serviços</label><br>
+	</h4>
+	<div id="vagas" class="form-login desk" >
+		<form>
+			<h4>Vaga de Emprego</h4>
+			<input type="text"    class="inp-login" required placeholder="Cargo" >
+			<input type="text"    class="inp-login" required placeholder="Nome da empresa"  >
+			<input type="number"  class="inp-login" required placeholder="Número de vagas" >
+			<input type="email"   class="inp-login" required placeholder="Email para contato"  >
+			<input type="number"  class="cell inp-login" required placeholder="Telefone para Contato" >
+			<input type="text"    class="inp-login" required placeholder="Cidade" >
+			<input type="text"    class="inp-login" required placeholder="estado" >
+			<textarea placeholder="Requisitos para a vaga" class="inp-login" required></textarea>
+			
+			<button class="enviar" >Enviar</button>
+		</form>
+	</div>
+	<div id="prest" class="form-login desk none" >
+		<form>
+			<h4>Prestação de Serviço</h4>
+			<input type="text"    class="inp-login" required placeholder="Nome"  >
+			<input type="email"   class="inp-login" required placeholder="Email para contato"  >
+			<input type="number"  class="cell inp-login" required placeholder="Telefone para Contato" >
+			<input type="text"    class="inp-login" required placeholder="Cidade" >
+			<input type="text"    class="inp-login" required placeholder="estado" >
+			<textarea placeholder="Informações a respeito do serviço" class="inp-login" required></textarea>
+			
+			<button class="enviar" >Enviar</button>
+		</form>
+	</div>
+</div>
+{% endblock content %}

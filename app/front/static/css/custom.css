@@ -1,0 +1,234 @@
+html, body {
+  display: flex;
+  flex-direction: column;
+  font-family:sans-serif;
+  width:100%;
+  margin:0px;
+  padding:0px;
+}
+.maincontents {
+  flex: 1;
+  display: flex; /* if you remove this line it works on Safari */
+}
+.flex {
+	display:flex;
+}
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+.dark {
+	background: rgba(20,20,50);
+	color:white;
+}
+.dark .post {
+	background: rgb(30,30,60);
+	color: rgba(255,255,255);
+	box-shadow: 4px 4px 8px rgba(0,0,255,.8);
+}
+.dark .reqs {
+	color: black;
+}
+.dark .form-login {
+	color:rgb(0,0,0);
+	background: gray;
+}
+.dark input::placeholder {
+	color:white;
+}
+.dark input:valid{
+	background:none;
+}
+.dark #inp-buscar {
+	color:white;
+}
+.dark textarea::placeholder{
+	color:white;
+}
+.dark a {
+	color: rgb(0,200,255);
+	text-decoration:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+.form-login  {
+	width:80%;
+	max-width:400px;
+	border:1px solid rgb(0,0,255);
+	margin: 10% auto;
+	padding:5%;
+	border-radius:10px;
+	background:white;
+}
+
+.avbar{
+	background: linear-gradient(20deg,rgb(50,50,200), rgb(0,0,100)) !important;
+}
+.navbar {
+	background: rgb(100,0,235) !important;
+}
+a {
+	color: rgb(0,0,255);
+	text-decoration:none;
+}
+.center  {
+	text-align:center !important;
+	margin: 0px auto;
+}
+.conteiner {
+	width:95%;
+	display:flex;
+	margin: 0px 2.5%;
+	justify-content: center;
+}
+.reqs {
+	max-width:300px;
+	width: 80%;
+	text-align:left;
+	background:rgb(240,240,240);
+	border:none;
+	border-radius:10px;
+	padding:5px;
+}
+.none {
+	display:none;
+}
+.user {
+	justify-content:center;
+	align-items:center;
+	width: 70% !important;
+	max-width: 600px !important;
+}
+.post {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width:80%;
+	min-width:150px;
+	max-width:400px;
+	padding: 5% 0;
+	margin: 10px;
+	border:1px solid rgb(0,0,255);
+	border-radius:10px;
+	box-shadow:2px 2px 4px gray;
+	background: white;
+}
+.post_type{
+	display: flex;
+	width: 100%;
+	padding: 20px;
+	flex-direction: column;
+	justify-content: rigth;
+}
+
+.desk{
+	width:80%;
+	max-width: 700px !important;
+	min-width: 300px  !important;
+}
+.post-env {
+	width:80%;
+	margin: 0px 10%;
+	background: rgb(0,255,0);
+	border:1px solid rgb(0,0,255);
+	border-radius: 10px;
+	box-shadow:2px 2px 6px gray;
+	color: rgb(0,0,255);
+}
+
+.green{
+	color: rgb(37,226,13);
+}
+.azul {
+	color: rgb(0,0,255);
+	text-shadow: .5px .5px .5px white;
+}
+
+
+
+
+
+
+
+.btn {
+	background: #660dc6;
+	border-radius: 10px;
+	color: white !important;
+}
+.enviar {
+	width:80%;
+	background:blue;
+	margin: 2% 10%;
+	color:rgb(0,255,0);
+	border:none;
+	border-radius:10px;
+}
+#inp-buscar {
+	color:black;
+}
+.inp-login  {
+	border:none;
+	border-bottom: 0.5px solid black;
+	width:90%;
+	margin:5% 5%;
+	background:none;
+}
+#btn-buscar {
+	width:30%;
+}
+#inp-buscar {
+	width:65%;
+	margin:0px 2.5%;
+}
+#buscar {
+	display:none;
+	justify-content:center;
+}
+.Pesquisar {
+	color:white;
+	float:right;
+	width:50%;
+	max-width: 80px;
+}
+.user input {
+	border: none;
+	border-bottom: 1px solid black;
+	background: none;
+	width: 80%;
+	margin: 10px auto;
+	max-width:250px;
+}
+.inp-login:not(:placeholder-shown):valid {
+	border-bottom: 1px solid rgb(0,200,0);
+	background:rgba(230,255,230,0.3);
+	border-radius: 10px;
+}
+input:not(:placeholder-shown):invalid, input:required:not(:placeholder-shown):invalid {
+	border-bottom: 1px dotted rgb(255,0,0);
+}
+input:focus, textarea:focus, select:focus{
+	outline: none;
+}
+textarea::placeholder, input::placeholder{
+	color:black;
+}
+#senha_erro {
+	color:red;
+}
+

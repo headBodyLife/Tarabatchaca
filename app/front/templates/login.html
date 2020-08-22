@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+	<form id="login"  class="form-login" action="/login" >
+		<fieldset><legend><h1 class="center" >Login</h1></legend>
+			{% if erro %}
+				<div class="alert alert-danger esc" role="alert">
+					Dados Inválidos!
+				</div>
+			{% endif %}
+			<input class="inp-login" type="email"    placeholder="E-mail" required minlength="13"><br>
+			<input class="inp-login psw" type="password" placeholder="Senha"  required minlength="8"><br>
+			
+			<input type="checkbox" class="btn_psw" onclick="togglePsw()"><span class="sp_psw"> Mostrar Senha</span>
+			
+			<button class="enviar" >Logar</button>
+			<br>
+			<p class="center" ><sub >Ainda não é cadastrado?</sub><br>
+			<a href="/cadastro" >Criar Conta</a></p>
+		</fieldset>
+	</form>
+{% endblock content %}

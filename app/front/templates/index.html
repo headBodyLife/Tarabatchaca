@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div><br>
+		{% for i in range(1,20) %}
+			<h3 class="center" >{{i}}/08/2020</h3>
+			<div class="conteiner flex flex-wrap" >
+				{% for c in range(1,3) %}
+					<div class="post" >
+						<h4 class=" azul center" >Eletricista</h4>
+						<div class="post_type">
+							<p><b>Tipo:</b>
+							Vaga de emprego
+							</p>
+							<p><b>Vagas:</b>1</p>
+							<em><b>Cidade: </b>Bauru</em>
+						</div>
+						<p class="center" ><a class="btn" href="/descricao/{{c}}" >visualizar</a></p>
+					</div>
+				{% endfor %}
+			</div><hr><br>
+		{% endfor %}
+	</div>
+{% endblock content %}
