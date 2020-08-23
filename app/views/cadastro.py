@@ -1,12 +1,19 @@
 from flask import (
 	render_template,request, session,
-	current_app, 
+	current_app, redirect,
 )
 
 from app.model.user import User
 
 
 def cadastro():
+	if 'user_id' in session:
+		user = User.query.filter_by(id=session['user_id']).first()
+		if not user:
+			session.pop('user_id',None)
+		else:
+			return redirect('/')
+			
 	if request.method == 'POST':
 		data = {}
 		if request.json:
@@ -42,6 +49,7 @@ def cadastro():
 								)
 							current_app.db.session.add(new_user)
 							current_app.db.session.commit()
+							session['user_id'] = new_user.id
 							return 'ok',201
 					
 						else:
@@ -64,7 +72,15 @@ def senha(senha1, senha2):
 		if senha1 == senha2:
 			if len(senha1) > 7:
 				if not senha1.isalnum():
-					return [True,senha1]
+					conf = False
+					for i in list(senha1):
+						if i.isupper():
+							conf = True
+							break
+					if conf:
+						return [True,senha1]
+					else:
+						return [False,'A senha deve contar ao menos uma letra maiuscula']
 				else:
 					return [False,'A senha deve contar ao menos um carácter especial']
 			else:

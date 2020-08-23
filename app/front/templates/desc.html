@@ -4,19 +4,19 @@
 
 <div class="conteiner flex-wrap"  >
 	<div class="post desk" >
-		<h4 class=" azul center" >Eletricista</h4>
+		<h4 class=" azul center" >{{vaga.nome}}</h4>
 		<b >Requisitos:</b>
 		<p class="reqs" >
-			lorehsh shsvsj jjvjh jvhh juyy hhhhh hhhhhy bbjkk nnkkk jjjjj nnkkk jjj kjkijij uuuu uuu jj jjj uu uu uu u udbsjzud jsud7s hdhs    jkjjjjjjjjjjh</i>
+			{{vaga.requisitos}}
 		</p>
 		<p>
-			<b >Empresa:</b> Shazam Auto Elétrica<br>
-			<sub><b>Salário:</b><span > R$ 1.500,00</span></sub><br>
-			<sub><b >Vagas:</b><span> 1</span></sub><br>
+			<b >Empresa:</b>{{vaga.empresa}}<br>
+			<sub><b>Salário:</b><span >{{vaga.salario}}</span></sub><br>
+			<sub><b >Vagas:</b><span>{{vaga.vagas}}</span></sub><br>
 			<sub><b >E-mail para contato:</b><br>
-			<span> ethodomingues@gmail.com</span></sub>
+			<span>{{vaga.email}}</span></sub>
 		</p>
-		<h6><span class="green">Disponível ✓</span></h6>
+		{% if vaga.disponível%}<h6><span class="green">Disponível ✓</span></h6>{%endif%}
 	</div>
 </div>
 

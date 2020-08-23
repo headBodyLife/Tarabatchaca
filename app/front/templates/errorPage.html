@@ -16,9 +16,16 @@
 				font-family: Arial,Sans-Serif;
 				color: rgb(250,0,100);
 			}
-			i{
+			i,em{
 				color: white;
 				font-size: 7vh;
+			}
+			a{
+				color: green;
+				text-decoration: none;
+			}
+			sup{
+				color: #4077ff;
 			}
 			b {
 				font-size: 5vh;
@@ -33,12 +40,12 @@
 	</head>
 	<body>
 		<p>
-		<b>Foi mal Brother! Não encontrei oq vc tava procurando...</b>
-		
+			<em>404<br>NOT FOUND</em>
+			<sup>...{{request.url}}</sup><br>
 		</p>
 		<p>
-		<i>404<br>
-		NOT FOUND</i>
+			<b>Foi mal Brother! Não encontrei oq vc tava procurando...</b>
+			<br><a href="/">Index</a>
 		</p>
 	</body>
 </html>

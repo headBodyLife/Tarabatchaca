@@ -1,0 +1,24 @@
+.erro_body {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	background: rgb(20,20,47);
+	font-family: Arial,Sans-Serif;
+	color: rgb(250,0,100);
+}
+.erro i,em{
+	color: white;
+	font-size: 7vh;
+}
+.erro b {
+	font-size: 5vh;
+}
+.erro p{
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	width: 80%;
+}

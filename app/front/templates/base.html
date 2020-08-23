@@ -14,22 +14,25 @@
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<b  class="Pesquisar" onclick="mostrar">Procurar</b>
 			<b  class="Pesquisar none"  onclick="mostrar">X</b>
-			<a class="navbar-brand" href="/">∆ BuskaTrampos ∆</a>
+			<a class="navbar-brand" href="/">∆BuskaTrampos∆</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
+					<b class="green">
+						{% if user %} Olá, {{ user.usuario }}!{% else %}Olá, Seja bem vindo!{% endif %}
+					</b>
 					<li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
 					<li class="nav-item active"><a class="nav-link" href="/">Vagas</a></li>
 					<li class="nav-item active"><a class="nav-link" href="/">Serviços</a></li>
-					<li class="nav-item active"><a class="nav-link" href="/addVaga">Anunciar Vagas ou Serviço</a></li>
 					{% if user %}
-						<li class="nav-item active"><a class="nav-link" href="/dashboard">Dashboard (perfil)</a></li>
-						<li class="nav-item active"><a class="nav-link" href="/">Logout</a></li>
+						<li class="nav-item active"><a class="nav-link" href="/addVaga/">Anunciar Vagas ou Serviço</a></li>
+						<li class="nav-item active"><a class="nav-link" href="/dashboard/">Dashboard - {{user.usuario}}</a></li>
+						<li class="nav-item active"><a class="nav-link" href="/logout/">Logout</a></li>
 					{% else %}
-						<li class="nav-item active"><a class="nav-link" href="/login">Login</a></li>
-						<li class="nav-item active"><a class="nav-link" href="/cadastro">Cadastre-se</a></li>
+						<li class="nav-item active"><a class="nav-link" href="/login/">Login</a></li>
+						<li class="nav-item active"><a class="nav-link" href="/cadastro/">Cadastre-se</a></li>
 					{% endif %}
 				</ul>
 			</div>
@@ -47,7 +50,7 @@
 		</div>
 		
 		{% block content %}
-		{% endblock %}
+		{% endblock content%}
 		
 		<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
 		<script src="{{ url_for('static', filename='js/jquery.mask.js') }}"></script>

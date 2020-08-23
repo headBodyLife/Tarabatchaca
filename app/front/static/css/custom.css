@@ -156,8 +156,7 @@ a {
 	color: rgb(37,226,13);
 }
 .azul {
-	color: rgb(0,0,255);
-	text-shadow: .5px .5px .5px white;
+	color: rgb(250,0,100);
 }
 
 
@@ -232,3 +231,15 @@ textarea::placeholder, input::placeholder{
 	color:red;
 }
 
+
+
+.alerts {
+	
+}
+
+.alertSuccess{
+	
+}
+.alertDanger{
+	
+}

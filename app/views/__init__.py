@@ -2,7 +2,7 @@ from .cadastro import cadastro
 from .dashboard import dashboard
 from .descricao import descricao
 from .index import index
-from .login import login
+from .login import login, logout
 from .vaga import addVaga
 from .errors import config_errPage
 
@@ -34,6 +34,14 @@ bp.add_url_rule(
 	view_func=login,
 	endpoint="login",
 )
+
+bp.add_url_rule(
+	'/logout/',
+	methods=["GET","POST"],
+	view_func=logout,
+	endpoint="logout",
+)
+
 
 bp.add_url_rule(
 	'/dashboard/',
