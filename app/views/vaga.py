@@ -58,7 +58,7 @@ def addVaga():
 					
 					current_app.db.session.add(vaga)
 					current_app.db.session.commit()
-					return 'ok',201
+					return jsonify(vaga.id), 201
 					
 				else:
 					return jsonify('dados incompletos'),206

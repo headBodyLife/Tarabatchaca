@@ -3,8 +3,9 @@
 {% block content %}
 	<div><br>
 	{%if vagas %}
-		{% for vaga in vagas %}
-			<h3 class="center" >{{vaga.data}}</h3>
+	{%for vagas1 in vagas %}
+		<h3 class="center" >{{vagas1[0].data}}</h3>
+		{% for vaga in vagas1 %}
 			<div class="conteiner flex flex-wrap" >
 
 					<div class="post" >
@@ -25,6 +26,7 @@
 						<p class="center" ><a class="btn" href="/descricao/{{vaga.id}}" >visualizar</a></p>
 					</div>
 			</div><hr><br>
+		{% endfor %}
 		{% endfor %}
 	{% endif %}
 	</div>

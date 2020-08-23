@@ -28,7 +28,7 @@ html, body {
 	color:white;
 }
 .dark .post {
-	background: rgb(30,30,60);
+	background: rgb(30,30,100);
 	color: rgba(255,255,255);
 	box-shadow: 4px 4px 8px rgba(0,0,255,.8);
 }
@@ -234,12 +234,33 @@ textarea::placeholder, input::placeholder{
 
 
 .alerts {
-	
+	display: flex;
+	flex-direction: column;
+	background: transparent;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
 .alertSuccess{
-	
+	display: none;
+	flex-direction: column;
+	background: green;
+	text-align: center;
+	width: 90%;
+	padding: 10px;
+	margin: 5%;
+	border-radius: 10px;
 }
+
 .alertDanger{
-	
+	display: none;
+	flex-direction: column;
+	background: red;
+	text-align: center;
+	width: 90%;
+	padding: 10px;
+	margin: 5%;
+	border-radius: 10px;
 }

@@ -9,14 +9,14 @@
 	</h4>
 	<div class="alerts">
 		<div class="alertSuccess">
-			vaga/Serviço adastrado com sucesso!
+			vaga/Serviço cadastrado com sucesso!
 			<a class="link_vaga">Clique Aqui para visualizar a vaga</a>
 			ou
 			<a href="/">Aqui para voltar ao menu inicial!</a>
 		</div>
 		<div class="alertDanger">
 			Ocorreu um erro inesperado, e não pude cadastrar sua vaga..
-			me desculpe, tente atualizar a página ou revise os campos!
+			me desculpe, tente atualizar a página e/ou revise os campos!
 		</div>
 	</div>
 	<div id="vagas" class="form-login desk" >
@@ -43,8 +43,8 @@
 			<input type="number"  class="cell inp-login" required placeholder="Telefone para Contato" name="tel"        v-model="vaga.tel">
 			<input type="text"    class="inp-login"      required placeholder="Nome da Serviço"       name="nome"       v-model="vaga.nome">
 			<input type="text"    class="inp-login"      required placeholder="Cidade"                name="cidade"     v-model="vaga.cidade">
-			<input type="text"    class="inp-login"      required placeholder="estado"                name="estado"     v-model="vaga.estado">
-			<textarea placeholder="Informações do serviço" class="inp-login" required         name="requisitos" v-model="vaga.requisitos"></textarea>
+			<input type="text"    class="inp-login"       placeholder="estado"                name="estado"     v-model="vaga.estado">
+			<textarea placeholder="Informações do serviço" class="inp-login"         name="requisitos" v-model="vaga.requisitos"></textarea>
 			
 			<button class="enviar" @click="enviar2()">Enviar</button>
 		</form>
@@ -74,8 +74,8 @@
 			methods: {
 				enviar2: function(){
 					axios.post('/addVaga/',{vaga: this.vaga})
-					.then(response => alert(response))
-					.catch(error => alert(error))
+					.then(response => alerta(response))
+					.catch(error => alerta(error))
 				}
 			}
 		})
@@ -99,11 +99,22 @@
 			methods: {
 				enviar1: function(){
 					axios.post('/addVaga/',{vaga: this.vaga})
-					.then(response => alert(response))
-					.catch(error => alert(error))
+					.then(response => alerta(response))
+					.catch(error => alerta(error))
 				}
 			}
 		})
+		function alerta(data){
+			if(data.status == 201){
+				alert(data.status)
+				$('.alertDanger').hide()
+				$('.alertSuccess').show()
+				$('.link_vaga').attr('href','/descricao/'+data.data)
+			}else if(data.status == 206){
+				$('.alertSuccess').hide()
+				$('.alertDanger').show()
+			}
+		}
 		$('#form1').submit(function(ev){ev.preventDefault()})
 		$('#form2').submit(function(ev){ev.preventDefault()})
 	})
